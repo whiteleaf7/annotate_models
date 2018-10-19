@@ -530,7 +530,7 @@ module AnnotateModels
         new_content = if %w(after bottom).include?(options[position].to_s)
                         magic_comments_block + (old_content.rstrip + "\n\n" + wrapped_info_block)
                       else
-                        magic_comments_block + wrapped_info_block + "\n" + old_content
+                        magic_comments_block + wrapped_info_block + "\n" + old_content.lstrip
                       end
       else
         # replace the old annotation with the new one
